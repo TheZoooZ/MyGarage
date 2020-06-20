@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyGarage</string>
+    <string name="defaultSearchMessage">Search...</string>
 </resources>
