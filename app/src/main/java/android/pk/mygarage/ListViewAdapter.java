@@ -1,4 +1,4 @@
-package android.pk.mygarage.Models;
+package android.pk.mygarage;
 
 import android.content.Context;
 import android.pk.mygarage.R;
