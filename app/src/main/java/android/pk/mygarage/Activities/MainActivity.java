@@ -1,8 +1,10 @@
 package android.pk.mygarage.Activities;
 
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.pk.mygarage.ListViewAdapter;
 import android.pk.mygarage.R;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -52,5 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
         ListViewAdapter adapter = new ListViewAdapter(this, AssetNames, AssetDescriptions);
         listView.setAdapter(adapter);
+
+        addAssetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_asset_details);
+            }
+        });
     }
 }
