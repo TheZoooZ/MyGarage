@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.pk.mygarage.Core.Models.Asset;
+import android.pk.mygarage.Database.DbContext;
 import android.pk.mygarage.R;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,8 +17,13 @@ import java.util.Date;
 
 public class AssetDetails extends AppCompatActivity {
 
+    DbContext dbContext;
+    Asset asset;
+
     Context context;
     ImageButton backToMainActivityButton;
+    ImageButton deleteAssetButton;
+
     TextView assetNameTextView;
     TextView descriptionTextView;
     TextView categoryTextView;
@@ -25,6 +32,10 @@ public class AssetDetails extends AppCompatActivity {
     TextView columnTextView;
     TextView warranty;
 
+    public AssetDetails() {
+        this.dbContext = new DbContext();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +43,7 @@ public class AssetDetails extends AppCompatActivity {
 
         context = this;
         backToMainActivityButton = findViewById(R.id.backToMainActivityButton);
+        deleteAssetButton = findViewById(R.id.deleteAssetButton);
 
         assetNameTextView = findViewById(R.id.assetNameTextView);
         descriptionTextView = findViewById(R.id.descriptionTextView);
@@ -43,7 +55,7 @@ public class AssetDetails extends AppCompatActivity {
 
         Intent currentIntent = getIntent();
 
-        Asset asset = (Asset) currentIntent.getSerializableExtra("asset");
+        asset = (Asset) currentIntent.getSerializableExtra("asset");
 
         assetNameTextView.setText(asset.name);
         descriptionTextView.setText(asset.description);
@@ -58,6 +70,22 @@ public class AssetDetails extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mainActivityIntent = new Intent(context, MainActivity.class);
                 startActivity(mainActivityIntent);
+            }
+        });
+
+        deleteAssetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isRemoved = dbContext.tryRemoveAsset(asset.id);
+
+                if(isRemoved){
+                    Toast.makeText(context, "Asset " + asset.name +" removed.", Toast.LENGTH_LONG).show();
+                    Intent mainActivityIntent = new Intent(context, MainActivity.class);
+                    startActivity(mainActivityIntent);
+                }
+                else{
+                    Toast.makeText(context, "Cannot remove this asset.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

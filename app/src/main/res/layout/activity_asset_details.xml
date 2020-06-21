@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:contentDescription="@string/textDescription"
     android:textAlignment="textEnd"
     tools:context=".Activities.AssetDetails">
 
@@ -205,5 +206,16 @@
         android:textColorHint="#000000"
         app:layout_constraintStart_toEndOf="@+id/column"
         app:layout_constraintTop_toBottomOf="@+id/placementTextView" />
+
+    <ImageButton
+        android:id="@+id/deleteAssetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_delete_forever_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
