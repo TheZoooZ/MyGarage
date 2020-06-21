@@ -7,7 +7,7 @@
     tools:context=".Activities.MainActivity">
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/assetsListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#FFFFFF"
@@ -18,8 +18,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBar"
         app:layout_constraintVertical_bias="1.0">
-
     </ListView>
+
+    <ListView
+        android:id="@+id/categoriesListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:background="#AEAEAE"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/assetsListView" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/searchBar"
@@ -51,7 +61,7 @@
         app:layout_constraintTop_toTopOf="@+id/searchBar" />
 
     <ImageButton
-        android:id="@+id/searchButton"
+        android:id="@+id/categoriesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -60,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/searchBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_search" />
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
     <ImageButton
         android:id="@+id/addAssetButton"
@@ -70,8 +80,8 @@
         android:layout_marginBottom="40dp"
         android:scaleX="2"
         android:scaleY="2"
-        app:layout_constraintBottom_toBottomOf="@+id/listView"
-        app:layout_constraintEnd_toEndOf="@+id/listView"
+        app:layout_constraintBottom_toBottomOf="@+id/assetsListView"
+        app:layout_constraintEnd_toEndOf="@+id/assetsListView"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

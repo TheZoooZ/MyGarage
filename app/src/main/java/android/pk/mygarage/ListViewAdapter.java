@@ -1,7 +1,7 @@
 package android.pk.mygarage;
 
 import android.content.Context;
-import android.pk.mygarage.R;
+import android.pk.mygarage.Core.Models.Asset;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +11,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class ListViewAdapter extends ArrayAdapter<String> {
-    private Context context;
-    private String[] assetNames;
-    private String[] assetDescriptions;
+import java.util.ArrayList;
+import java.util.List;
 
-    public ListViewAdapter (Context context, String[] assetNames, String[] assetDescriptions){
-        super(context, R.layout.row_list_view, R.id.AssetNameTextView, assetNames);
+public class ListViewAdapter extends ArrayAdapter<Asset> {
+    private Context context;
+    private List<String> assetNames;
+    private List<String> assetDescriptions;
+
+    public ListViewAdapter(Context context, List<Asset> assets) {
+        super(context, R.layout.row_list_view, R.id.AssetNameTextView, assets);
 
         this.context = context;
-        this.assetNames = assetNames;
-        this.assetDescriptions = assetDescriptions;
+        this.assetNames = getAssetNames(assets);
+        this.assetDescriptions = getAssetDescriptions(assets);
     }
 
     @NonNull
@@ -33,9 +36,23 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         TextView assetName = row.findViewById(R.id.AssetNameTextView);
         TextView assetDescription = row.findViewById(R.id.AssetDescriptionTextView);
 
-        assetName.setText(assetNames[position]);
-        assetDescription.setText(assetDescriptions[position]);
+        assetName.setText(assetNames.get(position));
+        assetDescription.setText(assetDescriptions.get(position));
 
         return row;
+    }
+
+    private List<String> getAssetDescriptions(List<Asset> assets) {
+        List<String> assetDescriptions = new ArrayList<>();
+        for (Asset asset : assets)
+            assetDescriptions.add(asset.description);
+        return assetDescriptions;
+    }
+
+    private List<String> getAssetNames(List<Asset> assets) {
+        List<String> assetNames = new ArrayList<>();
+        for (Asset asset : assets)
+            assetNames.add(asset.name);
+        return assetNames;
     }
 }

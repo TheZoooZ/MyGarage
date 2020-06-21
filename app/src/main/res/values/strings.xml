@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">MyGarage</string>
     <string name="defaultSearchMessage">Search...</string>
+    <string name="textRow">Row</string>
+    <string name="textColumn">Column</string>
+    <string name="loremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl ante, elementum id tempus tristique, rhoncus ut neque. Sed sagittis lacinia imperdiet. Morbi fermentum nulla vel leo tempus imperdiet.</string>
+    <string name="textDescription">Description</string>
+    <string name="textType">Type</string>
+    <string name="textPurchased">Purchase Date</string>
+    <string name="textWarranty">Warranty (Years)</string>
+    <string name="textPlacement">Placement</string>
 </resources>
