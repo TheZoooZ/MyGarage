@@ -1,19 +1,19 @@
 package android.pk.mygarage.Core.Models;
 
 import java.io.Serializable;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class Asset implements Serializable {
     public int id;
     public String name;
     public AssetType type;
     public String description;
-    public GregorianCalendar purchaseDate;
+    public Date purchaseDate;
     public int yearsOfWarranty;
     public int row;
     public int column;
 
-    public Asset(int id, String name, AssetType type, String description, GregorianCalendar purchaseDate, int yearsOfWarranty, int row, int column) {
+    public Asset(int id, String name, AssetType type, String description, Date purchaseDate, int yearsOfWarranty, int row, int column) {
         this.id = id;
         this.name = name;
         this.type = type;

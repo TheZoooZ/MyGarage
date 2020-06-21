@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Date;
+
 public class AssetDetails extends AppCompatActivity {
 
     Context context;
@@ -46,7 +48,7 @@ public class AssetDetails extends AppCompatActivity {
         assetNameTextView.setText(asset.name);
         descriptionTextView.setText(asset.description);
         categoryTextView.setText(asset.type.assetType);
-//        purchaseDateTextView.setText(String.valueOf(asset.purchaseDate.toZonedDateTime()));
+        purchaseDateTextView.setText(convertToDateStringFormat(asset.purchaseDate));
         rowTextView.setText(String.valueOf(asset.row));
         columnTextView.setText(String.valueOf(asset.column));
         warranty.setText(String.valueOf(asset.yearsOfWarranty));
@@ -58,5 +60,9 @@ public class AssetDetails extends AppCompatActivity {
                 startActivity(mainActivityIntent);
             }
         });
+    }
+
+    private String convertToDateStringFormat(Date purchaseDate) {
+        return purchaseDate.getDay() + " - " + purchaseDate.getMonth() + " - " + purchaseDate.getYear();
     }
 }

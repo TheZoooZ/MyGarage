@@ -3,6 +3,8 @@ package android.pk.mygarage.Common;
 import android.pk.mygarage.Core.Models.Asset;
 import android.pk.mygarage.Core.Models.AssetType;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class AssetsMock {
@@ -16,7 +18,7 @@ public class AssetsMock {
             "Wiertarka",
             elektronarzedzia,
             "Dobra do wiercenia",
-            new GregorianCalendar(2020, 05, 02),
+            new Date(2020, 05, 02),
             2,
             2,
             2
@@ -26,7 +28,7 @@ public class AssetsMock {
             "Śruba",
             mechaniczne,
             "Średnica 22mm",
-            new GregorianCalendar(2020,04,1),
+            new Date(2020,04,1),
             0,
             3,
             4
@@ -36,7 +38,7 @@ public class AssetsMock {
             "Nóż",
             mechaniczne,
             "Bardzo ostry, lepiej uważać.",
-            new GregorianCalendar(2020,07,10),
+            new Date(2020,07,10),
             0,
             4,
             2
@@ -46,7 +48,7 @@ public class AssetsMock {
             "Korkociąg",
             mechaniczne,
             "Wczoraj otwierałem nim szampana...",
-            new GregorianCalendar(2020,1,22),
+            new Date(2020,1,22),
             4,
             1,
             1
@@ -56,7 +58,7 @@ public class AssetsMock {
             "Maczeta",
             mechaniczne,
             "Kupiłem od kolegów...",
-            new GregorianCalendar(2020,2,2),
+            new Date(2020,2,2),
             10,
             1,
             5
@@ -66,7 +68,7 @@ public class AssetsMock {
             "Gogle ochronne",
             odziez,
             "Idealnie komponują się z maczetą",
-            new GregorianCalendar(2020,2,3),
+            new Date(2020,2,3),
             2,
             6,
             9
@@ -76,7 +78,7 @@ public class AssetsMock {
             "Piłka do metalu",
             mechaniczne,
             "Żaden metal się jej nie oprze",
-            new GregorianCalendar(2020,01,12),
+            new Date(2020,01,12),
             2,
             4,2
     );
@@ -85,7 +87,7 @@ public class AssetsMock {
             "Wygłuszacze do uszu",
             odziez,
             "Nie straszny im żaden hałas!",
-            new GregorianCalendar(2020,01,29),
+            new Date(2020,01,29),
             0,
             2,10
     );
@@ -94,7 +96,7 @@ public class AssetsMock {
             "Poziomica",
             pomiary,
             "Pomimo swojego wieku ciągle trzyma poziom.",
-            new GregorianCalendar(1990,12,12),
+            new Date(1990,12,12),
             0,
             10,
             10
@@ -104,7 +106,7 @@ public class AssetsMock {
             "Metr 25m",
             pomiary,
             "Taka długość zadowoliłaby niejednego mężczyznę",
-            new GregorianCalendar(2020,05,18),
+            new Date(2020,05,18),
             4,
             4,8
     );
