@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Activities.AddAssetActivity">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/addAssetText"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/backToMainActivityButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backToMainActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="@android:string/fingerprint_icon_content_description"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <EditText
+        android:id="@+id/assetNameTextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Asset Name"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <EditText
+        android:id="@+id/descriptionTextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assetNameTextInput" />
+
+    <ImageButton
+        android:id="@+id/categoriesChoiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@android:string/fingerprint_icon_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextInput"
+        app:srcCompat="@drawable/ic_menu_black_24dp" />
+
+    <TextView
+        android:id="@+id/categoryTextInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="Category"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintBottom_toBottomOf="@+id/categoriesChoiceButton"
+        app:layout_constraintEnd_toStartOf="@+id/categoriesChoiceButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextInput" />
+
+    <EditText
+        android:id="@+id/dateTextInput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="12-12-2012"
+        android:inputType="date"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintBottom_toBottomOf="@+id/dateChoiceButton"
+        app:layout_constraintEnd_toStartOf="@+id/dateChoiceButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriesChoiceListView" />
+
+    <ImageButton
+        android:id="@+id/dateChoiceButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriesChoiceListView"
+        app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+    <EditText
+        android:id="@+id/rowTextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Row"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintEnd_toStartOf="@+id/columnTextInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarDateChoiceView" />
+
+    <EditText
+        android:id="@+id/columnTextInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Column"
+        android:inputType="textPersonName"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="textStart"
+        android:textColorHint="#7A7A7A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/rowTextInput"
+        app:layout_constraintTop_toBottomOf="@+id/calendarDateChoiceView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/addAssetText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rowTextInput" />
+
+    <ListView
+        android:id="@+id/categoriesChoiceListView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTextInput" />
+
+    <CalendarView
+        android:id="@+id/calendarDateChoiceView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
