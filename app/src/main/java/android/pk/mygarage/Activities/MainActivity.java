@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         addAssetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_asset_details);
+                Intent addNewAssetIntent = new Intent(context, AddAssetActivity.class);
+                startActivity(addNewAssetIntent);
             }
         });
 

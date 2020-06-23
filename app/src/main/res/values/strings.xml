@@ -9,4 +9,5 @@
     <string name="textPurchased">Purchase Date</string>
     <string name="textWarranty">Warranty (Years)</string>
     <string name="textPlacement">Placement</string>
+    <string name="addAssetText">Add Asset</string>
 </resources>

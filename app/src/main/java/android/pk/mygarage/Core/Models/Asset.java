@@ -23,4 +23,26 @@ public class Asset implements Serializable {
         this.row = row;
         this.column = column;
     }
+
+    public Asset(String name, AssetType type, String description, Date purchaseDate, int yearsOfWarranty, int row, int column) {
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.purchaseDate = purchaseDate;
+        this.yearsOfWarranty = yearsOfWarranty;
+        this.row = row;
+        this.column = column;
+    }
+
+    public boolean Validate() {
+        if (name == null || name.isEmpty())
+            return false;
+        if (type == null)
+            return false;
+        if (row == 0)
+            return false;
+        if (column == 0)
+            return false;
+        return true;
+    }
 }

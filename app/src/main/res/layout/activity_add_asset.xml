@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Activities.AddAssetActivity">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/addAssetText"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/backToMainActivityButton"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:contentDescription="@android:string/fingerprint_icon_content_description"
+                android:padding="10dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/header"
+                app:layout_constraintStart_toStartOf="@+id/header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+            <EditText
+                android:id="@+id/assetNameTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="Asset Name"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header" />
+
+            <EditText
+                android:id="@+id/descriptionTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textMultiLine|textPersonName"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assetNameTextInput" />
+
+            <TextView
+                android:id="@+id/categoryTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:hint="Category"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextInput" />
+
+            <ImageButton
+                android:id="@+id/categoriesChoiceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:contentDescription="@android:string/fingerprint_icon_content_description"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/categoryTextInput"
+                app:layout_constraintEnd_toEndOf="@+id/categoryTextInput"
+                app:layout_constraintTop_toTopOf="@+id/categoryTextInput"
+                app:srcCompat="@drawable/ic_menu_black_24dp" />
+
+            <ListView
+                android:id="@+id/categoriesChoiceListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoryTextInput" />
+
+            <EditText
+                android:id="@+id/dateTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="12-12-2012"
+                android:inputType="date"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoriesChoiceListView" />
+
+            <ImageButton
+                android:id="@+id/dateChoiceButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/dateTextInput"
+                app:layout_constraintEnd_toEndOf="@+id/dateTextInput"
+                app:layout_constraintTop_toTopOf="@+id/dateTextInput"
+                app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+            <EditText
+                android:id="@+id/columnTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="Column"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rowTextInput"
+                app:layout_constraintTop_toBottomOf="@+id/calendarDateChoiceView" />
+
+            <CalendarView
+                android:id="@+id/calendarDateChoiceView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#636363"
+                android:selectedWeekBackgroundColor="#758AFF"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateTextInput" />
+
+            <EditText
+                android:id="@+id/rowTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="Row"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textColorHint="#7A7A7A"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/columnTextInput"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendarDateChoiceView" />
+
+            <Button
+                android:id="@+id/addAssetConfirmationButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/addAssetText"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/warrantyTextInput" />
+
+            <EditText
+                android:id="@+id/warrantyTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="#DDDDDD"
+                android:ems="10"
+                android:hint="@string/textWarranty"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rowTextInput" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
